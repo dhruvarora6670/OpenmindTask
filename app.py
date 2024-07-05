@@ -118,7 +118,7 @@ if st.session_state.user_role:
                 for count, (task_key, task_value) in enumerate(tasks.items(), 1):
                     task_list.append({
                         "Count": count,
-                        "Employee": task_value['employee'].capitalise(),
+                        "Employee": task_value['employee'],
                         "Description": task_value['task'],
                         "Deadline": task_value['deadline'].replace('T', ' '),
                         "Status": task_value['status'],
