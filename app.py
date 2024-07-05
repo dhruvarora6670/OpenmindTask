@@ -178,9 +178,10 @@ if st.session_state.user_role:
 
         for task_key, task_value in tasks.items():
             st.subheader(f"Task {count}")
-            st.write(f"Description: {task_value['task']}")
-            st.write(f"Deadline: {task_value['deadline'].replace('T', ' ')}")
-            status = st.selectbox(
+            col1, col2, col3, col4 = st.columns([2.5,1.5,1.5,1], vertical_alignment="top")
+            col1.write(f"Description: {task_value['task']}")
+            col2.write(f"{task_value['deadline'].replace('T', ' ')}")
+            status = col3.selectbox(
                 "Status", 
                 ["Pending", "Doing", "Completed"], 
                 index=["Pending", "Doing", "Completed"].index(task_value['status']),
@@ -188,7 +189,7 @@ if st.session_state.user_role:
             )
             count += 1
 
-            if st.button(f"Update Status", key=f"update_status_{task_key}"):
+            if col4.button(f"Update Status", key=f"update_status_{task_key}"):
                 task_ref.child(task_key).update({'status': status})
                 st.success("Status updated successfully")
 
