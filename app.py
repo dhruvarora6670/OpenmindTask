@@ -166,7 +166,7 @@ if st.session_state.user_role:
         st.title("Openmind Design Inc")
         current_time_container = st.empty()
 
-        current_time = datetime.now().strftime("%H:%M")
+        current_time = datetime.now().strftime("%H:%M") + timedelta(hours=5, minutes=30)
         st.subheader(f"Hi {users[username]['name']}, it's {current_time}")
 
         st.header("My Tasks")
@@ -212,4 +212,4 @@ if st.session_state.user_role:
     except AttributeError:
         pass
 else:
-    st.sidebar.warning("Please log in to view the task management system.")
+    st.sidebar.write("Please log in to view the task management system.")
