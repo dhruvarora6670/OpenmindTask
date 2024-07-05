@@ -19,7 +19,8 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
-    cred = json.loads(st.secrets["firebase"])
+    firebase_credentials = dict(st.secrets["firebase"])  # Convert to regular dictionary
+    cred = credentials.Certificate(firebase_credentials)
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://openmind-6c55b-default-rtdb.firebaseio.com/'
     })
