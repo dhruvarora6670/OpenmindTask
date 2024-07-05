@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import firebase_admin
 from firebase_admin import credentials, db
 import warnings
+import json
 
 # Hide warnings
 warnings.filterwarnings("ignore")
@@ -18,7 +19,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
-    cred = credentials.Certificate(r'openmind-6c55b-firebase-adminsdk-emz7g-177d018c8c.json')
+    cred = json.loads(st.secrets["firebase"])
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://openmind-6c55b-default-rtdb.firebaseio.com/'
     })
