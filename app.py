@@ -27,10 +27,10 @@ if not firebase_admin._apps:
 
 # User dictionary for authentication
 users = {
-    "admin": {"password": "admin_password", "name": "Manish"},
-    "employee1": {"name": "Bharat", "password": "password1", "phone": "phone_number1"},
-    "employee2": {"name": "Employee2", "password": "password2", "phone": "phone_number2"},
-    # Add other employees here
+    "admin": {"name": "Manish", "password": "dhruv_the_great"},
+    "bharat": {"name": "Bharat", "password": "bha_omd_pass"},
+    "mauilik": {"name": "Maulik", "password": "mal_pass_omd"},
+    "ajit": {"name": "Ajit", "password": "pass_omd_ajit"}
 }
 
 # Authentication function
