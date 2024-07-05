@@ -29,7 +29,7 @@ if not firebase_admin._apps:
 users = {
     "admin": {"name": "Manish", "password": "dhruv_the_great"},
     "bharat": {"name": "Bharat", "password": "bha_omd_pass"},
-    "mauilik": {"name": "Maulik", "password": "mal_pass_omd"},
+    "maulik": {"name": "Maulik", "password": "mal_pass_omd"},
     "ajit": {"name": "Ajit", "password": "pass_omd_ajit"}
 }
 
