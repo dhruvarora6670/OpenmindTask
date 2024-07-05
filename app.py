@@ -80,8 +80,9 @@ if st.session_state.user_role:
     # Admin Interface: Options
     if user_role == "admin":
         st.header("Admin Dashboard")
-
-        current_time = datetime.now().strftime("%H:%M")
+        current_time = datetime.now()
+        new_time = current_time + timedelta(hours=5, minutes=30)
+        current_time = new_time.strftime("%H:%M")
         st.subheader(f"Hi {users[username]['name']}, it's {current_time}. Have a Nice Day!")
 
         admin_option = st.sidebar.selectbox("Select Action", ["Add Task", "View Tasks", "Delete Tasks"], key="admin_action_select")
@@ -164,9 +165,10 @@ if st.session_state.user_role:
     # Employee Interface: View and Update Tasks
     elif user_role and user_role != "admin":
         st.title("Openmind Design Inc")
-        current_time_container = st.empty()
 
-        current_time = datetime.now().strftime("%H:%M") + timedelta(hours=5, minutes=30)
+        current_time = datetime.now()
+        new_time = current_time + timedelta(hours=5, minutes=30)
+        current_time = new_time.strftime("%H:%M"))
         st.subheader(f"Hi {users[username]['name']}, it's {current_time}")
 
         st.header("My Tasks")
